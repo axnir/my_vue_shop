@@ -143,7 +143,7 @@ export default {
   line-height: 24px;
   color: #fff;
   text-align: center;
-  letter-spacing: 1em;
+  letter-spacing: 0.2em;
   cursor: pointer;
 }
 </style>
