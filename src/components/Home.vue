@@ -29,7 +29,7 @@
             <!-- 一级菜单模板区域 -->
             <template slot="title">
               <!-- 图标 -->
-              <i class="el-icon-location"></i>
+              <i :class="iconsObj[item.id]"></i>
               <!-- 文本 -->
               <span>{{item.authName}}</span>
             </template>
@@ -68,7 +68,15 @@ export default {
       // 是否折叠侧边栏
       isCollapse: false,
       // 被激活的链接地址
-      activePath: ''
+      activePath: '',
+      // 字体图标对象
+      iconsObj: {
+        125: 'iconfont icon-user',
+        103: 'iconfont icon-tijikongjian',
+        101: 'iconfont icon-shangpin',
+        102: 'iconfont icon-danju',
+        145: 'iconfont icon-baobiao'
+      }
     }
   },
   // 生命周期中的创建
@@ -145,5 +153,9 @@ export default {
   text-align: center;
   letter-spacing: 0.2em;
   cursor: pointer;
+}
+
+.iconfont {
+  margin-right: 10px;
 }
 </style>
