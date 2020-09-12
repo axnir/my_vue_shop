@@ -237,7 +237,6 @@ export default {
       const picInfo = { pic: response.data.tmp_path }
       // 2.将图片信息对象push到pics数组中
       this.addForm.pics.push(picInfo)
-      console.log(this.addForm)
     },
     // 添加商品
     add () {
