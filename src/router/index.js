@@ -58,6 +58,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  // 使用history模式
+  // mode: 'history',
   routes
 })
 
