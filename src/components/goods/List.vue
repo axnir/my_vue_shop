@@ -11,8 +11,17 @@
     <el-card>
       <el-row :gutter="20">
         <el-col :span="12">
-          <el-input placeholder="请输入内容" v-model="queryInfo.query" clearable @clear="getGoodsList">
-            <el-button slot="append" icon="el-icon-search" @click="getGoodsList"></el-button>
+          <el-input
+            placeholder="请输入内容"
+            v-model="queryInfo.query"
+            clearable
+            @clear="getGoodsList"
+          >
+            <el-button
+              slot="append"
+              icon="el-icon-search"
+              @click="getGoodsList"
+            ></el-button>
           </el-input>
         </el-col>
         <el-col :span="4">
@@ -25,15 +34,24 @@
     <el-table :data="goodsList" border stripe>
       <el-table-column type="index" label="#"></el-table-column>
       <el-table-column label="商品名称" prop="goods_name"></el-table-column>
-      <el-table-column label="商品价格(元)" prop="goods_price"></el-table-column>
+      <el-table-column
+        label="商品价格(元)"
+        prop="goods_price"
+      ></el-table-column>
       <el-table-column label="商品重量" prop="goods_weight"></el-table-column>
       <el-table-column label="创建时间">
-        <template v-slot="scope">
+        <!-- 这里使用了elementui里table-column的作用域插槽 -->
+        <!-- name       说明 -->
+        <!--  -       自定义列的内容，参数为 { row, column, $index } -->
+        <!-- header   自定义表头的内容. 参数为 { column, $index } -->
+
+        <template v-slot:default="scope">
           <!-- 调用过滤器，管道符 -->
-          {{scope.row.add_time | dateFormat}}
+          {{ scope.row.add_time | dateFormat }}
         </template>
       </el-table-column>
       <el-table-column label="操作">
+        <!-- 插槽也可以写成v-slot="scope"，独占默认插槽 -->
         <template v-slot="scope">
           <el-button icon="el-icon-edit" type="primary" size="mini"></el-button>
           <el-button
