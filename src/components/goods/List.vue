@@ -51,8 +51,8 @@
         </template>
       </el-table-column>
       <el-table-column label="操作">
-        <!-- 插槽也可以写成v-slot="scope"，独占默认插槽 -->
-        <template v-slot="scope">
+        <!-- 插槽也可以写成v-slot:default="scope"，独占默认插槽 -->
+        <template v-slot:default="scope">
           <el-button icon="el-icon-edit" type="primary" size="mini"></el-button>
           <el-button
             icon="el-icon-delete"

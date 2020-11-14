@@ -37,7 +37,7 @@
           <el-table :data="manyTabData" border stripe>
             <!-- 展开行 -->
             <el-table-column type="expand">
-              <template v-slot="scope">
+              <template v-slot:default="scope">
                 <!-- 循环渲染tag标签 -->
                 <el-tag
                   v-for="(item, index) of scope.row.attr_vals"
@@ -67,7 +67,7 @@
             <el-table-column type="index"></el-table-column>
             <el-table-column label="参数名称" prop="attr_name"></el-table-column>
             <el-table-column label="操作">
-              <template v-slot="scope">
+              <template v-slot:default="scope">
                 <el-button
                   size="mini"
                   type="primary"
@@ -97,7 +97,7 @@
           <el-table :data="onlyTabData" border stripe>
             <!-- 展开行 -->
             <el-table-column type="expand">
-              <template v-slot="scope">
+              <template v-slot:default="scope">
                 <el-tag
                   v-for="(item, index) of scope.row.attr_vals"
                   :key="index"
@@ -126,7 +126,7 @@
             <el-table-column type="index"></el-table-column>
             <el-table-column label="参数名称" prop="attr_name"></el-table-column>
             <el-table-column label="操作">
-              <template v-slot="scope">
+              <template v-slot:default="scope">
                 <el-button
                   size="mini"
                   type="primary"

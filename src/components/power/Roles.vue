@@ -19,7 +19,7 @@
       <el-table :data="roleList" border stripe>
         <!-- 展开列 -->
         <el-table-column type="expand">
-          <template v-slot="scope">
+          <template v-slot:default="scope">
             <el-row
               :class="['bdbottom', 'vcenter', index1 == 0?'bdtop':'']"
               v-for="(item1, index1) of scope.row.children"
@@ -66,7 +66,7 @@
         <el-table-column label="角色描述" prop="roleDesc"></el-table-column>
         <el-table-column label="操作" width="290px">
           <!-- 使用插槽 -->
-          <template v-slot="scope">
+          <template v-slot:default="scope">
             <el-button
               type="primary"
               icon="el-icon-edit"

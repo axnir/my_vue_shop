@@ -22,14 +22,14 @@
         <el-table-column label="订单编号" prop="order_number"></el-table-column>
         <el-table-column label="订单价格" prop="order_price"></el-table-column>
         <el-table-column label="是否付款">
-          <template v-slot="scope">
+          <template v-slot:default="scope">
             <el-tag type="danger" v-if="scope.row.pay_status === '0'">未付款</el-tag>
             <el-tag type="success" v-else>已付款</el-tag>
           </template>
         </el-table-column>
         <el-table-column label="是否发货" prop="is_send"></el-table-column>
         <el-table-column label="下单时间">
-          <template v-slot="scope">
+          <template v-slot:default="scope">
             <!-- 调用过滤器，管道符 -->
             {{scope.row.create_time | dateFormat}}
           </template>
